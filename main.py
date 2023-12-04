@@ -29,7 +29,7 @@ best_model.fit(X_binary_train, y_binary_train)
 
 # Streamlit app
 def main():
-    st.title("Machine Failure Prediction App (Binary Classification)")
+    st.title("Machine Failure Prediction App")
 
     # User input for machine features
     air_temp = st.number_input("Air Temperature [K]", value=298.0, min_value=290.0, max_value=310.0)
