@@ -1,5 +1,6 @@
 ## ABSTRACT:
 
+This project focuses on predictive maintenance using a binary classification predictive model. The goal is to anticipate equipment failures, enabling proactive maintenance and minimizing downtime. The outcome is a web app built with Streamlit, allowing users to input machine metrics. The app predicts the likelihood of equipment failure based on a tuned Decision Tree model. The tool provides a user-friendly interface, enhancing accessibility to predictive maintenance insights and contributing to more efficient and informed decision-making in industrial settings.
  
 ## DATA DESCRIPTION:
 Here's a brief description of each column in the dataset:
@@ -60,3 +61,12 @@ The main alogorithm powering the machine failure perediction (binary classificat
 
 ## WEB APP URL:
 Here is the webapp url for the binary classification machine failure prediction app: https://binaryclass.streamlit.app
+
+## (Optional) Multiclass classification predictive model description:
+Apart from binary classification, I've performed multiclass classification as well. Here is the description oft he algorithm used.
+### Data preprocessing:
+1. **OneHotEncode:** In the multiclass classification task, the target variable is "Failure Type," which contains categorical labels indicating the type of failure. The OneHotEncoder is employed to encode these categorical labels into a binary matrix format. This process is known as one-hot encoding, where each unique category becomes a separate binary column. The resulting binary matrix helps in providing a suitable format for the machine learning algorithms to understand and learn from the categorical labels.
+2. **StandardScaler - Standardizing the Numerical Features:** The numerical features in the dataset, such as "Air temperature [K]," "Process temperature [K]," "Rotational speed [rpm]," "Torque [Nm]," and "Tool wear [min]," have varying scales. The StandardScaler is utilized to standardize these numerical features, ensuring that they all have a mean of 0 and a standard deviation of 1. Standardization is important for certain machine learning algorithms, particularly those sensitive to the scale of input features.
+### Model training:
+1. The RandomForestClassifier is a machine learning algorithm belonging to the ensemble learning category, specifically the Random Forest ensemble. It builds multiple decision trees and merges them together to get a more accurate and stable prediction.
+2. The GridSearchCV tool is employed for hyperparameter tuning. It performs an exhaustive search over a specified parameter grid, trying all possible combinations of hyperparameter values. In this case, hyperparameters like 'n_estimators' (number of trees in the forest), 'max_depth' (maximum depth of the tree), 'min_samples_split' (minimum samples required to split an internal node), and 'min_samples_leaf' (minimum samples required to be at a leaf node) are considered.
